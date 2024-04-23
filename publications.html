@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar-color">
+            <div class="container-fluid">
+                <a class="navbar-brand custom-font-logo" href="index.html">
+                    <img src="icons/icon.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-centre">
+                    SсholarHub
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link custom-font-all" href="publications.html">Publications</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle custom-font-all" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+                                <li><a class="dropdown-item " href="sign_in.html">
+                                  <img src="icons/sign-in-icon.svg" alt="Sign In Image" width="20" height="20">
+                                  Sign In
+                                </a></li>
+                                <li><a class="dropdown-item" href="sign_up.html">
+                                  <img src="icons/sign-up-icon.svg" alt="Sign Up Image" width="20" height="20">
+                                  Sign Up
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                  <a class="dropdown-item" href="my_profile.html">
+                                    <img src="icons/user-icon-1.svg" alt="User Image" width="15" height="15">
+                                    My Profile
+                                    
+                                  </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <h2 class="mb-4 font-color">Publications</h2>
+            <hr>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="searchInput">
+                        <button id="SearchButton" class="btn btn-primary rounded" type="button">
+                            <img src="icons/search_icon1.svg" alt="Search Icon" width="20" height="20">
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select id="sortSelect" class="form-select">
+                        <option selected disabled>Sort by field</option>
+                        <option value="author">Author</option>
+                        <option value="publication">Publication</option>
+                        <option value="collection">Collection</option>
+                        <option value="field">Field</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button id="myPub" class="btn btn-primary me-md-2 mb-2 mb-md-0 rounded">My Publications</button>
+                        <button class="btn btn-success align-items-center" id="buttAdd">
+                            <img src="icons/add.svg" alt="Add" width="16" height="16" class="me-1">Add
+                        </button>                        
+                    </div>
+                </div>
+            </div>
+            <div id="pub-tab" class="table-responsive-sm">    
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center ">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addPublicationModal" tabindex="-1" aria-labelledby="addPublicationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title mb-0" id="addPublicationModalLabel">Add Publication</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="author" class="form-label">Author</label>
+              <input type="text" class="form-control rounded" id="author" required>
+            </div>
+            <div class="mb-3">
+              <label for="publication" class="form-label">Publication</label>
+              <input type="text" class="form-control rounded" id="publication" required>
+            </div>
+            <div class="mb-3">
+              <label for="collection" class="form-label">Collection</label>
+              <input type="text" class="form-control rounded" id="collection" required>
+            </div>
+            <div class="mb-3">
+              <label for="field" class="form-label">Field</label>
+              <select class="form-select rounded" id="field" required>
+                <option disabled selected>Select a field</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Biology">Biology</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Sociology">Sociology</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Environmental Science">Environmental Science</option>
+              </select>
+            </div>
+            <button id="add-pub" type="submit" class="btn btn-primary btn-full-width rounded">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal for Edit Publication -->
+<div class="modal fade" id="editPublicationModal" tabindex="-1" aria-labelledby="editPublicationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title mb-0" id="editPublicationModalLabel">Edit Publication</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editPublicationForm">
+                    <div class="mb-3">
+                        <label for="editAuthor" class="form-label">Author</label>
+                        <input type="text" class="form-control rounded" id="editAuthor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPublication" class="form-label">Publication</label>
+                        <input type="text" class="form-control rounded" id="editPublication" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCollection" class="form-label">Collection</label>
+                        <input type="text" class="form-control rounded" id="editCollection" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editField" class="form-label">Field</label>
+                        <select class="form-select rounded" id="editField" required>
+                            <option disabled>Select a field</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Psychology">Psychology</option>
+                            <option value="Sociology">Sociology</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Environmental Science">Environmental Science</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full-width rounded">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <footer class="footer fixed-bottom py-3 bg-light d-flex justify-content-center align-items-center">
+        <div>
+            <span class="text-muted">© 2024 ScholarHub</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

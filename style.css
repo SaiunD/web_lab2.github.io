@@ -1,0 +1,108 @@
+.custom-navbar-color {
+    background-color: #a7cde8;
+}
+
+.custom-font-logo {
+    font-family: fantasy;
+    color: rgb(13, 58, 117);
+}
+
+.custom-font-all {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: 600;
+    color: rgb(37, 69, 110);
+}
+
+.custom-dropdown {
+    background-color: #effaff; 
+    font-family: "Trebuchet MS", Arial, sans-serif; 
+    color: rgb(37, 69, 110); 
+}
+
+.custom-page-color {
+    background-color: #e8f5ff;
+}
+
+body {
+    background-color: #e8f5ff;
+  }
+
+
+
+  .container {
+    margin-top: 100px;
+  }
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  }
+  .card-header {
+    background-color: #a7cde8;
+    color: rgb(37, 69, 110);
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+  }
+  .form-control {
+    border-radius: 0;
+  }
+  .btn-primary {
+    border-radius: 0;
+    background-color: rgb(37, 69, 110);
+    border: none;
+  }
+  .btn-primary:hover {
+    background-color: #a7cde8;
+  }
+
+  .font-color{
+    color: rgb(37, 69, 110); 
+}
+
+.container h1 {
+    text-align: center; /* Вирівнює текст по центру */
+}
+.container p {
+    text-align: center; /* Вирівнює текст по центру */
+}
+
+body {
+    background-color: #e8f5ff;
+}
+
+.btn-primary {
+    border-radius: 0;
+    background-color: rgb(37, 69, 110);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #a7cde8;
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+.modal-content .modal-header {
+  background-color: #a7cde8;
+  color: rgb(37, 69, 110);
+}
+
+
+.table {
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.table td,
+.table th {
+    padding: 8px 16px; 
+}
+
+.btn-primary.active,
+.btn-primary:active {
+    background-color: #a7cde8;; /* Змініть колір, якщо необхідно */
+    border-color: #007bff; /* Змініть колір рамки, якщо необхідно */
+}
